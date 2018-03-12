@@ -17,13 +17,14 @@ public class Bingo extends JPanel {
     private static boolean muted;
     private List<JButton> buttons = new ArrayList<>();
     private static List<String> terms = Arrays.asList(
-            "Java", "Polymorphism", "Inheritance", "JVM", "JDK",
-            "Encapsulation", "abstract class", "abstract method",
-            "final class", "final method", "final reference",
-            "static method", "public", "private", "protected",
-            "static attribute", "Stream", "Block Lambda",
+            "Java", "Polymorphism", "Inheritance", "JVM", "JDK", "JRE",
+            "Encapsulation", "Abstract Class", "Abstract Method",
+            "Final Class", "Final Method", "Final Reference",
+            "Static Method", "public", "private", "protected",
+            "final", "static", "package", "import",
+            "Static Attribute", "Stream", "Block Lambda",
             "Expression Lambda", "Method Reference", "primitive",
-            "concrete class", "interface");
+            "Concrete class", "interface", "Override", "Overload");
 
     public Bingo() {
         createGameBoard();

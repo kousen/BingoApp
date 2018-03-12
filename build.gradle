@@ -9,6 +9,7 @@ repositories {
 
 dependencies {
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-swing-junit:3.8.0'
 }
 
 mainClassName = 'com.kousenit.Bingo'
