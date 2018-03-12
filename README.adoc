@@ -1,0 +1,20 @@
+Bingo Game
+
+Used in training classes to help students get accustomed to
+object-oriented concepts.
+
+To play, execute `gradlew run` or double-click on jar file found
+in the directory `build/libs/BingoApp.jar` after a full build.
+Click on each term when you hear it during class. That
+will both change the background color of the button and disable it,
+while checking for bingo.
+
+Bingo is when you get all in a row horizontally,
+vertically, or diagonally. To play again, use the `Restart` menu
+item or the `Alt-R` keyboard shortcut.
+
+Note `Alt-M` mutes the "tada" sound played when you get bingo. That
+is a toggle, so you can mute or unmute the sound as desired.
+
+Ken Kousen
+

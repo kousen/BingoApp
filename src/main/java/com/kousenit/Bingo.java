@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +53,9 @@ public class Bingo extends JPanel {
             if (!isMuted()) {
                 try {
                     AudioInputStream audioInputStream =
-                            AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/TADA.WAV"));
+                            AudioSystem.getAudioInputStream(
+                                    new BufferedInputStream(
+                                            getClass().getResourceAsStream("/TADA.WAV")));
                     Clip clip = AudioSystem.getClip();
                     clip.open(audioInputStream);
                     clip.start();
@@ -69,17 +72,17 @@ public class Bingo extends JPanel {
         return
                 // check rows
                 !buttons.get(0).isEnabled() && !buttons.get(1).isEnabled() && !buttons.get(2).isEnabled() ||
-                !buttons.get(3).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(5).isEnabled() ||
-                !buttons.get(6).isEnabled() && !buttons.get(7).isEnabled() && !buttons.get(8).isEnabled() ||
+                        !buttons.get(3).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(5).isEnabled() ||
+                        !buttons.get(6).isEnabled() && !buttons.get(7).isEnabled() && !buttons.get(8).isEnabled() ||
 
-                // check columns
-                !buttons.get(0).isEnabled() && !buttons.get(3).isEnabled() && !buttons.get(6).isEnabled() ||
-                !buttons.get(1).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(7).isEnabled() ||
-                !buttons.get(2).isEnabled() && !buttons.get(5).isEnabled() && !buttons.get(8).isEnabled() ||
+                        // check columns
+                        !buttons.get(0).isEnabled() && !buttons.get(3).isEnabled() && !buttons.get(6).isEnabled() ||
+                        !buttons.get(1).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(7).isEnabled() ||
+                        !buttons.get(2).isEnabled() && !buttons.get(5).isEnabled() && !buttons.get(8).isEnabled() ||
 
-                // check diagonals
-                !buttons.get(0).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(8).isEnabled() ||
-                !buttons.get(2).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(6).isEnabled();
+                        // check diagonals
+                        !buttons.get(0).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(8).isEnabled() ||
+                        !buttons.get(2).isEnabled() && !buttons.get(4).isEnabled() && !buttons.get(6).isEnabled();
     }
 
     public static void setMuted(boolean muted) {
